@@ -52,3 +52,7 @@
   * 位置情報
   * いいねの種類拡大
 * 他SNSとの連携
+* トップページ
+
+### 画面遷移図
+https://www.figma.com/community/file/1325387966491351778/share-daily
