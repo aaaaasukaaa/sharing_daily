@@ -56,3 +56,6 @@
 
 ### 画面遷移図
 https://www.figma.com/community/file/1325387966491351778/share-daily
+
+### ER図
+https://dbdiagram.io/d/65991b3eac844320ae5b976a
