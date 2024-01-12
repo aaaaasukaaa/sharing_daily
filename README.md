@@ -99,6 +99,3 @@ SNSからの流入
 
 * 他SNSとの連携
 └ OmniAuth gemなどの連携できる仕組みを検討
-
-### 画面遷移図
-https://www.figma.com/community/file/1325387966491351778/share-daily
