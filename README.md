@@ -105,3 +105,96 @@ https://www.figma.com/community/file/1325387966491351778/share-daily
 
 ### ER図
 https://dbdiagram.io/d/65991b3eac844320ae5b976a
+
+■ER図の簡単な説明
+・users（ユーザー）:
+  ・id: ユーザーの主キー。
+  ・username: ユーザーのユーザー名。
+  ・email: ユーザーのメールアドレス。
+  ・password_digest: 安全に保存されたパスワード。
+  ・created_at: ユーザーアカウントが作成された日時。
+  ・instagram: ユーザーのInstagramアカウント。
+  ・x: （未指定のため説明不足）
+  ・facebook: ユーザーのFacebookアカウント。
+
+・tusmugispaces（つむぎスペース）:
+  ・id: つむぎスペースの主キー。
+  ・name: つむぎスペースの名前。
+  ・created_at: つむぎペースが作成された日時。
+  user_id integer [ref: > users.id]: users テーブルの id を参照する外部キー。
+
+・diaries（日記）:
+  ・id: 日記エントリの主キー。
+  ・user_id: users テーブルの id を参照する外部キー。
+  ・content: 日記のテキスト内容。
+  ・post_date: 日記が投稿された日時。
+  ・updated_at: 日記が最後に更新された日時。
+
+・diary_images（日記画像）:
+  ・id: 日記画像の主キー。
+  ・diary_id: diaries テーブルの id を参照する外部キー。
+  ・image_url: 日記画像のURL。
+
+・diary_likes（日記のいいね）:
+  ・id: 日記のいいねの主キー。
+  ・user_id: users テーブルの id を参照する外部キー。
+  ・diary_id: diaries テーブルの id を参照する外部キー。
+
+・diary_comments（日記のコメント）:
+  ・id: 日記のコメントの主キー。
+  ・user_id: users テーブルの id を参照する外部キー。
+  ・diary_id: diaries テーブルの id を参照する外部キー。
+  ・content: 日記コメントのテキスト内容。
+
+・albums（アルバム）:
+  ・id: アルバムの主キー。
+  ・user_id: users テーブルの id を参照する外部キー。
+  ・content: アルバムのテキスト内容。
+  ・post_date: アルバムが投稿された日時。
+  ・updated_at: アルバムが最後に更新された日時。
+
+・album_images（アルバム画像）:
+  ・id: アルバム画像の主キー。
+  ・album_id: albums テーブルの id を参照する外部キー。
+  ・image_url: アルバム画像のURL。
+
+・album_likes（アルバムのいいね）:
+  ・id: アルバムのいいねの主キー。
+  ・user_id: users テーブルの id を参照する外部キー。
+  ・album_id: albums テーブルの id を参照する外部キー。
+
+・album_comments（アルバムのコメント）:
+  ・id: アルバムのコメントの主キー。
+  ・user_id: users テーブルの id を参照する外部キー。
+  ・album_id: albums テーブルの id を参照する外部キー。
+  ・content: アルバムコメントのテキスト内容。
+
+・dream_maps（ドリームマップ）:
+  ・id: ドリームマップの主キー。
+  ・user_id: users テーブルの id を参照する外部キー。
+  ・content: ドリームマップのテキスト内容。
+  ・post_date: ドリームマップが投稿された日時。
+  ・updated_at: ドリームマップが最後に更新された日時。
+
+・dream_map_images（ドリームマップ画像）:
+  ・id: ドリームマップ画像の主キー。
+  ・dream_map_id: dream_maps テーブルの id を参照する外部キー。
+  ・image_url: ドリームマップ画像のURL
+
+・dream_map_likes（ドリームマップのいいね）:
+  ・id: ドリームマップのいいねの主キー。
+  ・user_id: users テーブルの id を参照する外部キー。
+  ・dream_map_id: dream_maps テーブルの id を参照する外部キー。
+
+・dream_map_comments（ドリームマップのコメント）:
+  ・id: ドリームマップのコメントの主キー。
+  ・user_id: users テーブルの id を参照する外部キー。
+  ・dream_map_id: dream_maps テーブルの id を参照する外部キー。
+  ・content: ドリームマップコメントのテキスト内容。
+
+・saved_contents（保存された日記）:
+  ・id: 保存された日記エントリの主キー。
+  ・user_id: users テーブルの id を参照する外部キー。
+  ・diary_id: diaries テーブルの id を参照する外部キー。
+  ・album_id: albums テーブルの id を参照する外部キー。
+  ・dream_map_id: dream_maps テーブルの id を参照する外部キー。
